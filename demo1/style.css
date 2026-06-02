@@ -1,0 +1,82 @@
+/* Базови стилове */
+body {
+    transition: background-color 0.5s, color 0.5s;
+    font-family: 'Courier New', Courier, monospace; /* Level 5 изискване */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Тъмна тема (Level 2) */
+body.dark-mode {
+    background-color: #0a0a0a;
+    color: #00ff00;
+}
+
+/* Светла тема */
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    border: 2px solid;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Бутони и Hover ефекти (Level 3) */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid;
+    color: inherit;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    transform: scale(1.1); /* Scale effect */
+    box-shadow: 0 0 15px #00ff00; /* Glow effect */
+}
+
+/* Прогрес бар (Level 4) */
+#progress-container {
+    width: 100%;
+    background-color: #333;
+    height: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #00ff00;
+    transition: width 0.1s linear;
+}
+
+/* Анимация за съобщенията */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.msg-item {
+    list-style: none;
+    margin: 5px 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.hidden { display: none; }
+
+/* Threat Level Color Effect (Level 4) */
+.danger { color: #ff0000; font-weight: bold; text-shadow: 0 0 5px red; }

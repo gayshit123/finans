@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cyber button</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+        }
+        button{
+            pading: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 15px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>CYBER BUTTON</h1>
+    <p>Click the button to see the magic!</p>
+    <button onclick="randomtheme()">Go wild!</button>
+    <script>
+        function randomtheme() {
+            let colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#33FFF5'];
+            let fonts = ['Arial', 'Verdana', 'Helvetica', 'Times New Roman', 'Courier New'];
+            let color = colors[Math.floor(Math.random() * colors.length)];
+            let font = fonts[Math.floor(Math.random() * fonts.length)];
+            document.body.style.backgroundColor = color;
+            document.body.style.fontFamily = font;
+        }
+    </script>
+
+</body>
+</html>
