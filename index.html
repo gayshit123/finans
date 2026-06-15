@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Finance Tracker</h1>
+            <p>Следи приходите и разходите си лесно</p>
+        </header>
+
+        <!-- Summary Cards -->
+        <div class="summary">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon income">📈</div>
+                    <div>
+                        <div class="card-title">Общи Приходи</div>
+                        <div class="card-amount income" id="totalIncome">0.00 лв.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon expense">📉</div>
+                    <div>
+                        <div class="card-title">Общи Разходи</div>
+                        <div class="card-amount expense" id="totalExpense">0.00 лв.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon balance">💎</div>
+                    <div>
+                        <div class="card-title">Баланс</div>
+                        <div class="card-amount balance" id="balance">0.00 лв.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Add Transaction Form -->
+            <div class="form-section">
+                <h2 class="section-title">➕ Нова Транзакция</h2>
+                
+                <div class="type-selector">
+                    <button class="type-btn income active" onclick="setType('income')">Приход</button>
+                    <button class="type-btn expense" onclick="setType('expense')">Разход</button>
+                </div>
+
+                <form id="transactionForm" onsubmit="addTransaction(event)">
+                    <div class="form-group">
+                        <label for="description">Описание</label>
+                        <input type="text" id="description" placeholder="Напр. Заплата, Наем..." required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="amount">Сума (лв.)</label>
+                            <input type="number" id="amount" placeholder="0.00" step="0.01" min="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Категория</label>
+                            <select id="category" required>
+                                <option value="">Избери...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Дата</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Добави Транзакция</button>
+                </form>
+            </div>
+
+            <!-- Transactions List -->
+            <div class="transactions-section">
+                <h2 class="section-title">📋 История</h2>
+                
+                <div class="filter-bar">
+                    <button class="filter-btn active" onclick="filterTransactions('all')">Всички</button>
+                    <button class="filter-btn" onclick="filterTransactions('income')">Приходи</button>
+                    <button class="filter-btn" onclick="filterTransactions('expense')">Разходи</button>
+                </div>
+
+                <div class="transactions-list" id="transactionsList">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📭</div>
+                        <p>Все още няма транзакции</p>
+                        <p style="font-size: 0.85rem; margin-top: 4px;">Добави първата си транзакция отляво</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="chart-section">
+            <h2 class="section-title">📊 Визуализация</h2>
+            <div class="chart-container" id="chartContainer">
+                <div class="empty-state" style="grid-column: 1 / -1;">
+                    <div class="empty-state-icon">📊</div>
+                    <p>Няма достатъчно данни за графика</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

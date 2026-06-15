@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🦸 HERO SYSTEM</h1>
+
+    <div class="energy-box">
+
+        <h3>⚡ ENERGY</h3>
+
+        <div class="energy-bar">
+            <div id="energyFill"></div>
+        </div>
+
+        <p id="energyText">100 / 100</p>
+
+    </div>
+
+    <div class="boss-box">
+
+        <h2>👹 DARK TITAN</h2>
+
+        <div class="boss-bar">
+            <div id="bossHP"></div>
+        </div>
+
+        <p id="bossText">200 / 200 HP</p>
+
+    </div>
+
+    <div class="powers">
+
+        <button onclick="usePower('🔥 Fireball',20,'#ff5733')">
+            🔥 Fireball
+        </button>
+
+        <button onclick="usePower('❄ Ice Blast',15,'#00bfff')">
+            ❄ Ice Blast
+        </button>
+
+        <button onclick="usePower('⚡ Lightning',25,'#ffd700')">
+            ⚡ Lightning
+        </button>
+
+        <button onclick="usePower('☠ APOCALYPSE',50,'purple')">
+            ☠ APOCALYPSE
+        </button>
+
+        <button onclick="rechargeEnergy()">
+            🔋 Recharge Energy
+        </button>
+
+    </div>
+
+    <div id="status">
+        Ready For Battle ⚔️
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
