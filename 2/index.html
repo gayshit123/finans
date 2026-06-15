@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN PANEL // SECURE ACCESS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="status-bar">
+                <span class="blink">●</span> SYSTEM ONLINE
+                <span class="ip-display" id="ipDisplay">IP: Detecting...</span>
+                <span class="time" id="clock">00:00:00</span>
+            </div>
+            <h1 class="glitch" data-text="ADMIN PANEL">ADMIN PANEL</h1>
+            <p class="subtitle">// RESTRICTED ACCESS // LEVEL 5 CLEARANCE REQUIRED</p>
+        </div>
+
+        <!-- Fake Face Scan Overlay -->
+        <div class="face-scan-overlay" id="faceScanOverlay">
+            <div class="scan-frame">
+                <div class="scan-line"></div>
+                <div class="scan-grid"></div>
+                <div class="face-target">
+                    <div class="target-ring"></div>
+                    <div class="target-ring"></div>
+                    <div class="target-ring"></div>
+                </div>
+                <div class="scan-text">BIOMETRIC SCAN IN PROGRESS...</div>
+                <div class="scan-progress">
+                    <div class="progress-bar" id="scanProgress"></div>
+                </div>
+                <div class="scan-data" id="scanData">
+                    > Analyzing retinal pattern...<br>
+                    > Matching biometric hash...<br>
+                    > Verifying identity...
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loader">
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+            </div>
+            <div class="loading-text">AUTHENTICATING...</div>
+            <div class="loading-log" id="loadingLog"></div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-box" id="loginBox">
+            <div class="corner tl"></div>
+            <div class="corner tr"></div>
+            <div class="corner bl"></div>
+            <div class="corner br"></div>
+            
+            <div class="input-group">
+                <label for="username">
+                    <span class="label-icon">></span> USERNAME
+                </label>
+                <input type="text" id="username" placeholder="Enter username..." autocomplete="off">
+                <div class="input-line"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">
+                    <span class="label-icon">></span> PASSWORD
+                </label>
+                <input type="password" id="password" placeholder="Enter password...">
+                <div class="input-line"></div>
+                
+                <!-- Password Strength Indicator -->
+                <div class="strength-meter" id="strengthMeter">
+                    <div class="strength-label">STRENGTH:</div>
+                    <div class="strength-bars">
+                        <div class="bar" data-level="1"></div>
+                        <div class="bar" data-level="2"></div>
+                        <div class="bar" data-level="3"></div>
+                        <div class="bar" data-level="4"></div>
+                    </div>
+                    <div class="strength-text" id="strengthText">NONE</div>
+                </div>
+
+                <!-- Caps Lock Warning -->
+                <div class="caps-warning" id="capsWarning">
+                    <span class="warning-icon">⚠</span> CAPS LOCK IS ON
+                </div>
+            </div>
+
+            <button class="login-btn" id="loginBtn" onclick="attemptLogin()">
+                <span class="btn-text">[ LOGIN ]</span>
+                <span class="btn-glitch"></span>
+            </button>
+
+            <!-- Attempt Counter -->
+            <div class="attempt-counter" id="attemptCounter">
+                ATTEMPTS REMAINING: <span id="attemptsLeft">3</span>/3
+            </div>
+
+            <!-- Message Display -->
+            <div class="message-display" id="messageDisplay"></div>
+
+            <!-- Lock Timer -->
+            <div class="lock-timer" id="lockTimer">
+                SYSTEM LOCKED. RETRY IN: <span id="timerCount">30</span>s
+            </div>
+        </div>
+
+        <!-- Success Screen -->
+        <div class="success-screen" id="successScreen">
+            <div class="success-icon">
+                <div class="lock-icon unlocked">
+                    <div class="shackle"></div>
+                    <div class="body"></div>
+                </div>
+            </div>
+            <h2 class="success-title">ACCESS GRANTED</h2>
+            <div class="success-data">
+                <p>> Welcome, Administrator</p>
+                <p>> Session initialized</p>
+                <p>> Security clearance: LEVEL 5</p>
+                <p>> All systems operational</p>
+            </div>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span>root@admin-panel:~#</span>
+                </div>
+                <div class="terminal-body" id="terminalBody"></div>
+            </div>
+        </div>
+
+        <!-- Fingerprint Animation -->
+        <div class="fingerprint-container" id="fingerprintContainer">
+            <svg class="fingerprint" viewBox="0 0 100 100">
+                <path class="fp-line" d="M50,20 Q30,20 25,40 Q20,60 35,75 Q50,90 65,75 Q80,60 75,40 Q70,20 50,20"/>
+                <path class="fp-line" d="M50,30 Q35,30 32,45 Q29,60 40,70 Q50,80 60,70 Q71,60 68,45 Q65,30 50,30"/>
+                <path class="fp-line" d="M50,40 Q40,40 38,50 Q36,60 45,65 Q50,68 55,65 Q64,60 62,50 Q60,40 50,40"/>
+                <path class="fp-line" d="M50,50 Q45,50 44,55 Q43,60 48,62 Q50,63 52,62 Q57,60 56,55 Q55,50 50,50"/>
+                <circle class="fp-dot" cx="50" cy="55" r="2"/>
+            </svg>
+            <div class="fp-scan-line"></div>
+            <div class="fp-text">SCANNING FINGERPRINT...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

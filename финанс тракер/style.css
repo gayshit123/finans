@@ -1,0 +1,186 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Segoe UI",sans-serif;
+    background:#f4f6f9;
+    color:#333;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.app-header{
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    color:white;
+    padding:25px 0;
+}
+
+.app-header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+section{
+    background:white;
+    margin-top:20px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+h2{
+    margin-bottom:15px;
+    color:#2a5298;
+}
+
+form{
+    display:grid;
+    gap:10px;
+}
+
+input,
+select,
+textarea{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+button{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#2a5298;
+    color:white;
+    cursor:pointer;
+}
+
+.finance-overview{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    color:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.card p{
+    font-size:2rem;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.card small{
+    display:block;
+    margin-top:10px;
+    font-size:1rem;
+}
+
+.income-card{
+    background:linear-gradient(135deg,#27ae60,#2ecc71);
+}
+
+.expense-card{
+    background:linear-gradient(135deg,#c0392b,#e74c3c);
+}
+
+.balance-card{
+    background:linear-gradient(135deg,#2980b9,#3498db);
+}
+
+.statistics-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.stat-card{
+    background:#ecf0f1;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+#incomeList,
+#expenseList{
+    list-style:none;
+}
+
+.income-item,
+.expense-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.income-item{
+    background:#f0fff5;
+    border-left:5px solid #2ecc71;
+}
+
+.expense-item{
+    background:#fff0f0;
+    border-left:5px solid #e74c3c;
+}
+
+.error-message{
+    color:red;
+    font-weight:bold;
+}
+
+.app-footer{
+    text-align:center;
+    padding:20px;
+}
+
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode section{
+    background:#1e1e1e;
+}
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select{
+    background:#333;
+    color:white;
+    border-color:#555;
+}
+
+.dark-mode .stat-card{
+    background:#333;
+}
+
+.dark-mode .income-item,
+.dark-mode .expense-item{
+    background:#2b2b2b;
+}
+
+@media(max-width:768px){
+
+    .finance-overview{
+        grid-template-columns:1fr;
+    }
+
+    .statistics-grid{
+        grid-template-columns:1fr;
+    }
+}

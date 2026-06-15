@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔴 Fake Streaming Chat System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="stream-title">
+                <span class="live-badge">LIVE</span>
+                <span>🔥 Pro Gamer Stream</span>
+            </div>
+            <div class="viewer-count" id="viewerCount">1,234 viewers</div>
+        </div>
+
+        <!-- Stream Goal -->
+        <div class="stream-goal">
+            <div class="goal-label">
+                <span>🎯 Stream Goal: New Gaming Setup</span>
+                <span id="goalText">$450 / $1,000</span>
+            </div>
+            <div class="goal-bar">
+                <div class="goal-progress" id="goalProgress" style="width: 45%">45%</div>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-container" id="chatContainer">
+            <button class="sound-toggle" id="soundToggle">🔊</button>
+            <div class="empty-chat" id="emptyState">Press START CHAT to begin the stream!</div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="btn btn-start" id="startBtn">▶ Start Chat</button>
+            <button class="btn btn-stop" id="stopBtn" disabled>⏹ Stop</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
