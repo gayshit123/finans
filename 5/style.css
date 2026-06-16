@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0d1117;
+    color:white;
+    min-height:100vh;
+    padding:20px;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+h1{
+    color:#00e5ff;
+}
+
+.player-info{
+    display:flex;
+    gap:20px;
+    font-size:18px;
+}
+
+.controls{
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+input{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+button{
+    padding:12px 18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#00e5ff;
+    color:black;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    transition:.3s;
+    padding-bottom:15px;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.03);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:10px 0;
+}
+
+.price{
+    margin:10px 0;
+}
+
+.rarity{
+    display:inline-block;
+    padding:5px 12px;
+    border-radius:20px;
+    margin-bottom:10px;
+}
+
+.common{
+    background:gray;
+}
+
+.rare{
+    background:dodgerblue;
+}
+
+.epic{
+    background:purple;
+}
+
+.legendary{
+    background:gold;
+    color:black;
+    font-weight:bold;
+    box-shadow:0 0 15px gold;
+}
+
+.inventory{
+    margin-top:20px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.inventory-item{
+    background:#161b22;
+    padding:10px 15px;
+    border-radius:10px;
+}
+
+#toast{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#00e676;
+    color:black;
+    padding:15px;
+    border-radius:10px;
+    opacity:0;
+    transition:.4s;
+    font-weight:bold;
+}
